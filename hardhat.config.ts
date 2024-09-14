@@ -2,10 +2,11 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-ethers"
 import "@nomicfoundation/hardhat-toolbox"
 import "@nomicfoundation/hardhat-verify"
-import "dotenv/config"
-import "./tasks/blockNumber"
+import "@typechain/hardhat"
 import "hardhat-gas-reporter"
 import "solidity-coverage"
+import "dotenv/config"
+import "./tasks/blockNumber"
 
 const RPC_URL_SEPOLIA = process.env.RPC_URL_SEPOLIA
 const RPC_URL_HOLESKY = process.env.RPC_URL_HOLESKY

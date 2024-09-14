@@ -8,10 +8,10 @@ import "solidity-coverage"
 import "dotenv/config"
 import "./tasks/blockNumber"
 
-const RPC_URL_SEPOLIA = process.env.RPC_URL_SEPOLIA
-const RPC_URL_HOLESKY = process.env.RPC_URL_HOLESKY
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
+const HOLESKY_RPC_URL = process.env.HOLESKY_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
-const API_KEY_ETHERSCAN = process.env.API_KEY_ETHERSCAN
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -19,12 +19,12 @@ const config: HardhatUserConfig = {
     defaultNetwork: "hardhat",
     networks: {
         sepolia: {
-            url: RPC_URL_SEPOLIA,
+            url: SEPOLIA_RPC_URL,
             accounts: [PRIVATE_KEY!],
             chainId: 11155111,
         },
         holesky: {
-            url: RPC_URL_HOLESKY,
+            url: HOLESKY_RPC_URL,
             accounts: [PRIVATE_KEY!],
             chainId: 17000,
         },
@@ -38,8 +38,8 @@ const config: HardhatUserConfig = {
     },
     etherscan: {
         apiKey: {
-            sepolia: API_KEY_ETHERSCAN!,
-            holesky: API_KEY_ETHERSCAN!,
+            sepolia: ETHERSCAN_API_KEY!,
+            holesky: ETHERSCAN_API_KEY!,
         },
         customChains: [
             {
@@ -67,7 +67,7 @@ const config: HardhatUserConfig = {
         coinmarketcap: COINMARKETCAP_API_KEY,
         L1: "ethereum",
         token: "ETH",
-        L1Etherscan: API_KEY_ETHERSCAN,
+        L1Etherscan: ETHERSCAN_API_KEY,
     },
     sourcify: {
         enabled: false,

@@ -11,7 +11,7 @@ async function main() {
     const sSAddress = await simpleStorage.getAddress()
     console.log(`Deployed contract to: ${sSAddress}`)
 
-    if (network.config.chainId === 17000 && process.env.API_KEY_ETHERSCAN) {
+    if (network.config.chainId === 17000 && process.env.ETHERSCAN_API_KEY) {
         await simpleStorage.deploymentTransaction()?.wait(2)
         await verify(sSAddress, [])
     }
